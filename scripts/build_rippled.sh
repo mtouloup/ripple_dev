@@ -19,7 +19,7 @@ cd boost_1_71_0
 ./b2 -j 4
 
 #Set boost_root as ENV variable 
-export BOOST_ROOT=/tmp/boost_1_71_0
+export BOOST_ROOT=/boost_1_71_0
 
 
 #Update profile
@@ -38,5 +38,4 @@ cd my_build
 cmake ..
 cmake --build .
 
-#Run rippled UnitTests - If no errors, Succesfully Installed
-./rippled -u
+echo "Build Finished"
