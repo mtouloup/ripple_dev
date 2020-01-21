@@ -10,10 +10,10 @@ ENV BOOST_ROOT=/boost_1_71_0
 #Install/setup prerequisites:
 ADD ./shared/build_deps.sh /tmp/
 ADD ./shared/install_boost.sh /tmp/
-ADD ./scripts/run_ripple_server.sh /tmp/
 ADD ./scripts/ubuntu_setup.sh /tmp/
 ADD ./scripts/build_rippled.sh /tmp/
 ADD ./cfg/rippled-example.cfg /tmp/
+ADD ./scripts/run_ripple_server.sh /tmp/
 
 #Give privileges to script files 
 RUN chmod +x /tmp/ubuntu_setup.sh && \
@@ -31,4 +31,4 @@ RUN /tmp/run_ripple_server.sh
 #Expose rippled port
 EXPOSE 51235
 
-CMD /bin/bash
+CMD ./rippled/my_build/rippled
