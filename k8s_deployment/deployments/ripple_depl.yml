@@ -1,20 +1,22 @@
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ripple_iff
+  name: ripple-iff
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: ripple-iff
   template:
     metadata:
       labels:
-        app: ripple_iff
+        app: ripple-iff
         platform: ripple
     spec:
       containers:
-      - name: ripple_iff
+      - name: ripple-iff
         image: mtouloup/ripple_iff
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 51235
-        env:
