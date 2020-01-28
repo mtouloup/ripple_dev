@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ripple_iff
+  labels:
+    app: ripple_iff
+    platform: ripple
+spec:
+  ports:
+  - port: 51235
+    name: http
+    targetPort:
+  selector:
+    app: ripple_iff
+  type: ClusterIP
