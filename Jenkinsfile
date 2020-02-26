@@ -16,9 +16,9 @@ pipeline {
         }
         stage('Deploying') {
             steps {
-                    sshagent (credentials: ['jenkins_webserver_login']) 
+                    sshagent (credentials: ['k8s-master-ssh']) 
                         {
-                            sh 'ssh -o StrictHostKeyChecking=no -l jenkinscd 10.10.70.12 ./k8s_deployment/deploy-in-k8s.sh'
+                            sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 ./k8s_deployment/deploy-in-k8s.sh'
                         } 
             }
         }
