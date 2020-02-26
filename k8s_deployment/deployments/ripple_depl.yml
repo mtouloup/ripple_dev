@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: ripple-iff
-        image: mtouloup/ripple_iff
+        image: docker-registry:5001/ripple_server
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 51235
