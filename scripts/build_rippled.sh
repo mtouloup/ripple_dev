@@ -36,6 +36,6 @@ git checkout master
 mkdir my_build
 cd my_build
 cmake ..
-cmake --build .
+cmake --build . -j 4
 
 echo "Build Finished"
