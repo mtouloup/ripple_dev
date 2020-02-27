@@ -18,7 +18,8 @@ pipeline {
             steps {
                     sshagent (credentials: ['k8s-master-ssh']) 
                         {
-                            sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 ./k8s_deployment/deploy-in-k8s.sh'
+							sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 chmod +x k8s_deployment/deploy-in-k8s.sh'
+                            sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 k8s_deployment/deploy-in-k8s.sh'
                         } 
             }
         }
