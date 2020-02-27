@@ -18,7 +18,7 @@ pipeline {
             steps {
                     sshagent (credentials: ['k8s-master-ssh']) 
                         {
-			sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 git clone https://github.com/mtouloup/ripple_dev.git
+			sh 'ssh -o StrictHostKeyChecking=no -l jenkinsci 10.10.70.12 git clone https://github.com/mtouloup/ripple_dev.git \
 			&& cd ripple_dev && chmod +x k8s_deployment/deploy-in-k8s.sh && ./k8s_deployment/deploy-in-k8s.s'
                         } 
             }
